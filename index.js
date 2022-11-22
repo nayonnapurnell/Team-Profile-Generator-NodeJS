@@ -3,6 +3,21 @@ const Employee = require('./employee');
 
 const promptUser = () => {
     return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the Employee Name?',
+          },
+          {
+            type: 'input',
+            name: 'email',
+            message: 'What is the Employee Email Address?',
+          },
+          {
+            type: 'input',
+            name: 'role',
+            message: 'What is the Employee Role?',
+          },
 
     ]);
 };
