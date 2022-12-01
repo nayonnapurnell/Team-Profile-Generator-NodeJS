@@ -13,7 +13,7 @@ function generateHTML({ id, name, email, role }) {
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">${name}</div>
             <div class="card-body text-success">
-            <h5 class="card-title">${role}</h5>
+            <h5 class="card-title">${Employee.getRole()}</h5>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${id}</li>
             <li class="list-group-item">Email: ${email}</li>
