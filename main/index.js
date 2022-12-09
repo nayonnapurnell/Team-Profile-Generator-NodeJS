@@ -5,8 +5,9 @@ const inquirer = require('inquirer');
 const { writeFile } = require('fs').promises;
 let generateHTML = require('./generateHTML.js');
 
+const profileList = [];
 
-const promptUser = () => {
+const addAProfile = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -53,8 +54,21 @@ const promptUser = () => {
 
 
 const init = () => {
-    promptUser()
-      .then((answers) => {writeFile('index.html', generateHTML(answers), manger(answers))})
+  addAProfile().then((answers) => { 
+    if(answers.role === "Manager"){
+      const manager = new Manager(answer.id, "Stephanie Lockland", "steph.lockland@gmail.com", "Room 208")
+      profileList.push(manager);
+    }
+      if(answers.role === "Engineer"){
+      const engineer = new Engineer(answer.id, "Ronald Grandyour", "ronald.grandyour@gmail.com", "rgrandy@github.com")
+      profileList.push(engineer);
+    }
+      if(answers.role === "Intern"){
+      const intern = new Intern(answer.id, "Veronica Spicer", "vspicer@gmail.com", "Temple University")
+      profileList.push(intern);
+    }
+    writeFile('index.html', generateHTML(answers))
+  })
       .then(() => console.log('Successfully wrote to index.html'))
       .catch((err) => console.error(err));
   };
