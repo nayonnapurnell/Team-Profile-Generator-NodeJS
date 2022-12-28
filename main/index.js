@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 const { writeFile } = require('fs').promises;
 let generateHTML = require('./generateHTML.js');
 
-const profileList = [];
+let profileList = [];
 
 const addAProfile = () => {
     return inquirer.prompt([
@@ -51,6 +51,26 @@ const addAProfile = () => {
     ]);
 };
 
+const addATeam = () => {
+  inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'profile',
+      message: 'Do you want to add another profile?',
+    },
+  ]).then((answers) => {
+    if(answers.profile === true){
+      init();
+    }
+    else{
+      writeFile('index.html', generateHTML(profileList))
+      console.log('Successfully wrote to index.html')
+    }
+  }).catch((err) => console.error(err));  
+};
+
+
+
 
 
 const init = () => {
@@ -67,10 +87,11 @@ const init = () => {
       const intern = new Intern(answer.id, "Veronica Spicer", "vspicer@gmail.com", "Temple University")
       profileList.push(intern);
     }
-    writeFile('index.html', generateHTML(answers))
+    addATeam();
   })
-      .then(() => console.log('Successfully wrote to index.html'))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err));  
   };
   
   init();
+
+ 
