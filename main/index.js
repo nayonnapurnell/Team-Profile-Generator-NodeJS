@@ -1,6 +1,7 @@
 let Employee = require('../lib/employee');
 let Engineer = require('../lib/engineer');
 let Manager = require('../lib/manager');
+let Intern = require('../lib/intern');
 const inquirer = require('inquirer');
 const { writeFile } = require('fs').promises;
 let generateHTML = require('./generateHTML.js');
@@ -69,22 +70,18 @@ const addATeam = () => {
   }).catch((err) => console.error(err));  
 };
 
-
-
-
-
 const init = () => {
   addAProfile().then((answers) => { 
     if(answers.role === "Manager"){
-      const manager = new Manager(answer.id, "Stephanie Lockland", "steph.lockland@gmail.com", "Room 208")
+      const manager = new Manager(answers.id, "Stephanie Lockland", "steph.lockland@gmail.com", "Room 208")
       profileList.push(manager);
     }
       if(answers.role === "Engineer"){
-      const engineer = new Engineer(answer.id, "Ronald Grandyour", "ronald.grandyour@gmail.com", "rgrandy@github.com")
+      const engineer = new Engineer(answers.id, "Ronald Grandyour", "ronald.grandyour@gmail.com", "rgrandy@github.com")
       profileList.push(engineer);
     }
       if(answers.role === "Intern"){
-      const intern = new Intern(answer.id, "Veronica Spicer", "vspicer@gmail.com", "Temple University")
+      const intern = new Intern(answers.id, "Veronica Spicer", "vspicer@gmail.com", "Temple University")
       profileList.push(intern);
     }
     addATeam();
