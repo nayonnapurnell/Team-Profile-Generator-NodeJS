@@ -50,9 +50,6 @@ describe("Engineer", () => {
       
             expect(eng).toThrowError(err);
           });
-
-
-
     });
     
 })
