@@ -1,10 +1,11 @@
+let generateHTML = require('./generateHTML.js');
 let Employee = require('../lib/employee');
 let Engineer = require('../lib/engineer');
 let Manager = require('../lib/manager');
 let Intern = require('../lib/intern');
 const inquirer = require('inquirer');
 const { writeFile } = require('fs').promises;
-let generateHTML = require('./generateHTML.js');
+
 
 let profileList = [];
 
@@ -39,7 +40,7 @@ const addAProfile = () => {
         },
         {
           type: 'input',
-          name: 'githubUsername',
+          name: 'github',
           message: `What is the Engineer's GitHub username?`,
           when: (answers) => answers.role === 'Engineer'
        },
@@ -65,24 +66,23 @@ const addATeam = () => {
     }
     else{
       writeFile('index.html', generateHTML(profileList))
-      console.log('Successfully wrote to index.html')
+      console.log(answers);
+      console.log(profileList);
+      console.log('Successfully wrote to index.html');
     }
   }).catch((err) => console.error(err));  
 };
 
 const init = () => {
   addAProfile().then((answers) => { 
-    if(answers.role === "Manager"){
-      const manager = new Manager(answers.id, "Stephanie Lockland", "steph.lockland@gmail.com", "Room 208")
-      profileList.push(manager);
+    if(answers.role === "Manager"){      
+      profileList.push(new Manager(answers.id, answers.name, answers.email, answers.officeNumber));
     }
       if(answers.role === "Engineer"){
-      const engineer = new Engineer(answers.id, "Ronald Grandyour", "ronald.grandyour@gmail.com", "rgrandy@github.com")
-      profileList.push(engineer);
+      profileList.push(new Engineer(answers.id, answers.name, answers.email, answers.github));
     }
       if(answers.role === "Intern"){
-      const intern = new Intern(answers.id, "Veronica Spicer", "vspicer@gmail.com", "Temple University")
-      profileList.push(intern);
+      profileList.push(new Intern(answers.id,answers.name, answers.email, answers.school));
     }
     addATeam();
   })
