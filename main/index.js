@@ -69,12 +69,6 @@ const addATeam = () => {
   }).catch((err) => console.error(err));  
 };
 
-
-
-
-
-
-
 const init = () => {
   addAProfile().then((answers) => { 
     if(answers.role === "Manager"){      
