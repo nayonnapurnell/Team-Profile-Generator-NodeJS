@@ -11,49 +11,44 @@ The Team Profile Generator is a command-line-input application run in Node that 
   - [Table of Contents](#table-of-contents)
   - [Tools](#tools)
   - [Setup](#setup)
-  - [Usage](#usage)
   - [License](#license)
   - [Author](#author)
   - [Contact](#contact)
   
  ## Tools
   ------
-  HTML
-- CSS
-- Javascript
-- Node
-- Object-Oriented Programming
-- NPM
-- Jest
+  - HTML
+  - CSS
+  - Javascript
+  - Node
+  - Object-Oriented Programming
+  - NPM
+  - Jest
 
-  ## Setup 
+## Setup 
   ------
   Clone the repo found below:
-* https://github.com/nayonnapurnell/Team-Profile-Generator-NodeJS
+  * https://github.com/nayonnapurnell/Team-Profile-Generator-NodeJS
 
-* Run 'npm install' to install dependencies
+  * Run 'npm install' to install dependencies
 
-* Run 'node index.js' to run the program
+  * Run 'node index.js' to run the program
 
-* Open the 'team.html' file from the output folder in a web browser to view
+  * Open the 'team.html' file from the output folder in a web browser to view
 
-Tests:
+  Tests:
 
-* Testing is done via Jest and is incorporated in the source code.
-
-
-  ## Usage 
-  ------
+  * Testing is done via Jest and is incorporated in the source code.
   
-  ## License
+## License
   ------
  A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.  ![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)  [MIT License](https://choosealicense.com/licenses/mit/)  
 
-   ## Author
+## Author
   ------
   Nayonna Purnell
 
-   ## Contact
+## Contact
   ------
   * LinkedIn: https://www.linkedin.com/in/nayonnapurnell/
   * Email:  nayonnapurnell@outlook.com
