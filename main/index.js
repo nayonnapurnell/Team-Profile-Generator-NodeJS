@@ -61,6 +61,7 @@ const addATeam = () => {
     },
   ]).then((answers) => {
     if(answers.profile === false){
+      console.log(profileList);
       print();
     }
     else{
@@ -92,7 +93,8 @@ const init = () => {
     let employeeProfileData =
     profileList.map( answers => {
       if(answers.getRole() === "Manager"){
-        return `    
+        return ` 
+        <div class="col">   
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
@@ -104,10 +106,12 @@ const init = () => {
         </ul>
         </div>
         </div>
+        </div>
         </div>`
       }
-      if(answers.role === "Engineer"){
+      if(answers.getRole() === "Engineer"){
         return `
+        <div class="col">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
@@ -119,10 +123,12 @@ const init = () => {
         </ul>
         </div>
         </div>
+        </div>
         </div>`;
       }
-      if(answers.role === "Intern"){
+      if(answers.getRole() === "Intern"){
         return `
+        <div class="col">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
@@ -132,6 +138,7 @@ const init = () => {
         <li class="list-group-item email">Email: ${answers.email}</li>
         <li class="list-group-item role">Role: ${answers.school}</li>
         </ul>
+        </div>
         </div>
         </div>
         </div>`;
@@ -149,13 +156,15 @@ const init = () => {
     </head>
     <body>
     <h1 class="fs-1">My Team</h1>
-      <ul class="employee-list">
+      <div class="row">
         ${employeeProfileData}
-      </ul>
+      </div>
     </body>
     </html>
     `
 writeFile('index.html', data)
+console.log(employeeProfileData);
 console.log('Successfully wrote to index.html');
+
   }
  

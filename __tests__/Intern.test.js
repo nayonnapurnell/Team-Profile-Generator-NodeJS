@@ -1,12 +1,11 @@
-const Intern = require("../intern");
+const Intern = require("../lib/intern");
 
 describe("Intern", () => {
-    describe("Initialization", ()=> {
         it("should create an object with a name and age if provided valid arguments", () => {
-            const intern = new Intern(003, "Alisah", "Alisah.tester@gmail.com", "Temple University");
+            const intern = new Intern(3, "Alisah", "Alisah.tester@gmail.com", "Temple University");
       
             // Verify that the new object has the correct properties
-            expect(intern.id).toEqual(003);
+            expect(intern.id).toEqual(3);
             expect(intern.name).toEqual("Alisah");
             expect(intern.email).toEqual("Alisah.tester@gmail.com");
             expect(intern.school).toEqual("Temple University");
@@ -51,5 +50,3 @@ describe("Intern", () => {
             expect(int).toThrowError(err);
           });
     });
-    
-})

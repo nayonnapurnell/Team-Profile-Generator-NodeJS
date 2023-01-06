@@ -1,15 +1,14 @@
-const Manager = require("../manager");
+const Manager = require("../lib/manager");
 
 describe("Manager", () => {
-    describe("Initialization", ()=> {
         it("should create an object with a name and age if provided valid arguments", () => {
-            const manager = new Manager(004, "Enocah", "Enocah.tester@gmail.com", "Temple University");
+            const manager = new Manager(4, "Enocah", "Enocah.tester@gmail.com", "Temple University",28);
       
             // Verify that the new object has the correct properties
-            expect(manager.id).toEqual(003);
+            expect(manager.id).toEqual(4);
             expect(manager.name).toEqual("Enocah");
             expect(manager.email).toEqual("Enocah.tester@gmail.com");
-            expect(manager.officeNumber).toEqual(208);
+            expect(manager.officeNumber).toEqual(28);
           });
 
           it("should throw an error if provided no arguments", () => {
@@ -54,5 +53,3 @@ describe("Manager", () => {
             expect(man).toThrowError(err);
           });
     });
-    
-})

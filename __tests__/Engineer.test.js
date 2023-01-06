@@ -1,15 +1,14 @@
-const Engineer = require("../engineer");
+const Engineer = require("../lib/engineer");
 
 describe("Engineer", () => {
-    describe("Initialization", ()=> {
-        it("should create an object with a name and age if provided valid arguments", () => {
-            const engineer = new Engineer(002, "Raulph", "raulph.tester@gmail.com", "raulph@github.com");
+    it("should create an object with a name and age if provided valid arguments", () => {
+            const engineer = new Engineer(2, "Raulph", "raulph.tester@gmail.com", "raulph@github.com");
       
             // Verify that the new object has the correct properties
-            expect(child.id).toEqual(002);
-            expect(child.name).toEqual("Raulph");
-            expect(child.email).toEqual("raulph.tester@gmail.com");
-            expect(child.github).toEqual("raulph@github.com");
+            expect(engineer.id).toBe(2);
+            expect(engineer.name).toBe("Raulph");
+            expect(engineer.email).toBe("raulph.tester@gmail.com");
+            expect(engineer.github).toBe("raulph@github.com");
           });
 
           it("should throw an error if provided no arguments", () => {
@@ -52,4 +51,3 @@ describe("Engineer", () => {
           });
     });
     
-})

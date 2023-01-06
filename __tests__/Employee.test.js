@@ -1,14 +1,13 @@
-const Employee = require("../Employee");
+const Employee = require("../lib/employee");
 
 describe("Employee class", () => {
-    describe("getName Method", () =>{
         it("should create the Employee object with an id, name, and email", () => {
-          const employee = new Employee(001, "Sarah", "sara.tester@gmail.com");
+          const employee = new Employee(1, "Sarah", "sara.tester@gmail.com");
 
           //verify that the new object has the correct properties
-          expect(child.id).toEqual(001);
-          expect(child.name).toEqual("Sarah");
-          expect(child.email).toEqual("sara.tester@gmail.com");
+          expect(employee.id).toEqual(1);
+          expect(employee.name).toEqual("Sarah");
+          expect(employee.email).toEqual("sara.tester@gmail.com");
 });
 
 it("should throw an error if provided no arguments", () => {
@@ -37,13 +36,9 @@ it("should throw an error if provided no arguments", () => {
   });
 
   it("should throw an error if 'email' is not a string", () => {
-    const emp = () => new Employee(10, 5);
+    const emp = () => new Employee(1, 5);
     const err = new Error("Expected parameter 'email' to be a non-empty string");
 
     expect(emp).toThrowError(err);
   });
-
-
-
-    })
 })
