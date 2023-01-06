@@ -43,8 +43,6 @@ The Team Profile Generator is a command-line-input application run in Node that 
 
 ## Usage
   ------
-  ![Video_Walkthrough](.src/css/walkthroughVideo.gif)
-
   This program will ask a user for information about each employee.  When the user is finished inputting the information, an html file will generator with Profile Cards for each employee.
 
   Here is a link to the video walk through:
