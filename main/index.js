@@ -93,12 +93,13 @@ const init = () => {
     let employeeProfileData =
     profileList.map( answers => {
       if(answers.getRole() === "Manager"){
-        return ` 
-        <div class="col">   
+        return `
+        <div class="card">
+        <div class="card-body">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
-        <h5 class="card-title text-white"><i class="fa-solid fa-mug-saucer"></i> Manager</h5>
+        <h5 class="card-title text-white">Manager</h5>
         <ul class="list-group list-group-flush">
         <li class="list-group-item id">ID:${answers.id}</li>
         <li class="list-group-item email">Email: ${answers.email}</li>
@@ -111,7 +112,8 @@ const init = () => {
       }
       if(answers.getRole() === "Engineer"){
         return `
-        <div class="col">
+        <div class="card">
+        <div class="card-body">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
@@ -124,15 +126,17 @@ const init = () => {
         </div>
         </div>
         </div>
-        </div>`;
+        </div>
+        `;
       }
       if(answers.getRole() === "Intern"){
         return `
-        <div class="col">
+        <div class="card">
+        <div class="card-body">
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header name">${answers.name}</div>
         <div class="card-body text-primary">
-        <h5 class="card-title text-white">"Intern</h5>
+        <h5 class="card-title text-white">Intern</h5>
         <ul class="list-group list-group-flush">
         <li class="list-group-item id">ID:${answers.id}</li>
         <li class="list-group-item email">Email: ${answers.email}</li>
@@ -141,7 +145,8 @@ const init = () => {
         </div>
         </div>
         </div>
-        </div>`;
+        </div>
+        `;
       }
     }).join("");
     const data = 
@@ -156,7 +161,7 @@ const init = () => {
     </head>
     <body>
     <h1 class="fs-1">My Team</h1>
-      <div class="row">
+      <div class="card-group">
         ${employeeProfileData}
       </div>
     </body>
